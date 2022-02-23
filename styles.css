@@ -1,0 +1,399 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --black: #000;
+    --white: #fff;
+    --gris: rgba(23, 26, 32, 0.8);
+    --oscuro: rgba(244, 244, 244, 0.65);
+    --grey10: #393c41;
+    --grey: #393c41;
+}
+html {
+    scroll-behavior: smooth;
+}
+html::-webkit-scrollbar{
+    width: 7px;
+    background-color: var(--white);
+}
+html::-webkit-scrollbar-thumb{
+    background-color: var(--black);
+}
+body {
+    font-family: 'Roboto', sans-serif;
+}
+a,
+.menu {
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+}
+ul {
+    list-style: none;
+}
+a,
+h1,
+h2,
+h3,
+h4,
+p,
+.menu {
+    letter-spacing: 1.4px;
+}
+/* ---------------header-------------- */
+.vh {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    
+}
+.imagen {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background-color: rgba(0,0,0,0.5); */
+    background-blend-mode: multiply;
+}
+.header {
+    background-image: url("img/teslas.jpg");
+}
+.header-nav {
+    position: fixed;
+    padding: 1% 3%;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    width: 100%;
+    height: 50px;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.07);
+    transition: 0.6s ease background-color;
+}
+.header-nav-left .tesla-logo {
+    width: 100px;
+}
+.header-nav-center {
+    flex: 1;
+    text-align: center;
+}
+.header-nav-center ul li,
+.header-nav-rigth ul li {
+    display: inline-block;
+}
+.header-nav-center ul li a,
+.header-nav-rigth ul li a,
+.menu {
+    padding: 8px 15px;
+    border-radius: 10px;
+    color: var(--black);
+    transition: 0.3s ease all;
+}
+.header-nav-center ul li a:hover,
+.header-nav-rigth ul li a:hover,
+.menu:hover {
+    background-color: rgba(0, 0, 0, 0.063);
+}
+.menu {
+    border: none;
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+}
+.close {
+    position: absolute;
+    top: 5%;
+    right: 10%;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 22px;
+}
+.close:hover {
+    background-color: rgba(0, 0, 0, 0.063);
+}
+
+.display {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 311px;
+    height: 100vh;
+    background-color: var(--white);
+    z-index: 100;
+    padding: 5% 2%;
+    transition: 0.3s ease;
+    transition-property: right;
+}
+.display .scroll {
+    overflow: auto;
+    width: 100%;
+    height: 100%;
+}
+.display .scroll::-webkit-scrollbar{
+    width: 7px;
+    background-color: var(--white);
+}
+.display .scroll::-webkit-scrollbar-thumb{
+    background-color: var(--black);
+    border-radius: 5px;
+}
+.display ul li {
+    width: 100%;
+    display: block;
+    margin: 5% 0;
+    text-align: left;
+}
+.display ul li a {
+    display: block;
+    width: 100%;
+}
+.display ul li a span {
+    font-size: 12px;
+    color: var(--grey10);
+}
+.display ul li a span:hover {
+    border-bottom: 2px solid var(--black);
+}
+.display ul li a img {
+    width: 18px;
+    float: left;
+    margin-right: 5px;
+}
+.display.active {
+    position: fixed;
+    right: 0;
+}
+/* -------------------MAIN MODEL------------------ */
+
+.model3 {
+    background-image: url("img/tesla3.jpg");
+}
+
+.modelx {
+    background-image: url("img/image-4.jpg");
+}
+
+.modely {
+    background-image: url("img/image-3.jpg");
+}
+
+.solar-roof {
+    background-image: url("img/solar-roof.jpg");
+}
+
+.solar-panels {
+    background-image: url("img/tesla-solar-paneles.jpg");
+}
+.accesorios {
+    background-color: var(--white);
+}
+.accesorios-img {
+    padding-top: 10%;
+    max-width: 350px;
+    width: 100%;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.accesorios-img img {
+    width: 100%;
+}
+/* ----------------------INFO-------------------- */
+.info {
+    width: fit-content;
+    height: fit-content;
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 90;
+    padding: 20px;
+}
+.info-contenedor {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.info-contenedor-botones {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 1fr;
+    column-gap: 20px;
+}
+.info-contenedor-botones a {
+    width: 100%;
+    padding: 12px 30px;
+    background-color: var(--gris);
+    color: var(--white);
+    text-align: center;
+    border-radius: 20px;
+    font-size: 13px;
+}
+.info-contenedor-botones a.white {
+    background-color: var(--oscuro);
+    color: var(--grey10);
+}
+.info-contenedor-chevron {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+.info-contenedor-chevron img {
+    width: 100%;
+    animation: saltar 1s infinite forwards;
+    transform: translateY(10px);
+}
+@keyframes saltar {
+    0% {
+        transform: translateY(-10px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 0.5;
+    }
+}
+
+.modelos-contenedor {
+    width: fit-content;
+    position: absolute;
+    top: 17%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 5px;
+}
+.modelos-carros {
+    width: fit-content;
+    border-radius: 20px;
+    border: 2px solid var(--gris);
+    padding: 8px 40px;
+}
+.modelos-carros h3 {
+    font-size: 38px;
+    color: var(--grey10);
+    transition: 0.5s ease all;
+    animation: 2s opacidad infinite;
+}
+@keyframes opacidad {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+.model {
+    width: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s ease all;
+}
+.modelos-enlace {
+    margin-top: 20px;
+}
+.modelos-enlace p {
+    color: var(--grey);
+}
+.modelos-enlace p a {
+    color: var(--black);
+    border-bottom: 1px solid var(--black);
+}
+.modelos-enlace p a:hover {
+    border-bottom: 3px solid var(--black);
+}
+/* -------------------Footer------------------ */
+.footer {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    background-color: var(--white);
+}
+.footer-contenedor {
+    padding: 10px;
+    text-align: center;
+    z-index: 95;
+}
+.footer-contenedor ul li {
+    display: inline-block;
+    margin-right: 10px;
+}
+.footer-contenedor ul li a {
+    color: var(--grey10);
+    cursor: pointer;
+    font-weight: 100;
+    font-size: 13px;
+}
+/* -------------------media query------------------ */
+@media (max-width: 1160px) {
+    .header-nav{
+        justify-content: space-between;
+    }
+    .header-nav-rigth {
+        display: none;
+    }
+    .header-nav-left {
+        flex-basis: 50%;
+    }
+    .menu {
+        display: flex;
+        align-items: center;
+        flex-basis: 0%;
+    }
+    .header-nav-center {
+        display: none;
+    }
+    .display {
+        display: block;
+    }
+}
+@media (max-width: 664px) {
+    .info {
+        width: 100%;
+        z-index: 90;
+        padding: 10px;
+    }
+    .info-contenedor-botones {
+        grid-template-columns: 1fr;
+        row-gap: 15px;
+    }
+    .info-contenedor-botones a {
+        padding: 12px 0;
+    }
+}
+@media (max-width: 445px) {
+    .display {
+        right: -250%;
+        width: 230px;
+    }
+    .modelos-carros {
+        padding: 8px 10px;
+    }
+    .modelos-carros h3 {
+        font-size: 28px;
+    }
+   
+}
